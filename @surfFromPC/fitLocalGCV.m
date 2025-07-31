@@ -30,6 +30,11 @@ powers = [ xpowers(:), ypowers(:), zpowers(:) ];
 powers = powers( sum(powers,2) <= polydegree, : );
 n = size(powers,1);
 
+if N < n
+    error(['Not enough points (' num2str(N) ') for polynomial degree ' ...
+        num2str(polydegree) '. Reduce polydegree or use more points.']);
+end
+
 P = ones( N, n );
 for k = 1:size(powers,1)
 	for d = 1:3
