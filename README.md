@@ -53,3 +53,5 @@ OBJ = surfFromPC(pc);
 
 Additional vertex attributes that are not recognised by the `pointCloud`
 class are returned in the structure `extra` for further processing.
+
+You can also perform a full reconstruction from a PLY file using the `main_ply.m` script. Edit the `plyFilename` variable near the top of the script to point to your own PLY file and then run `main_ply` in MATLAB. The script will perform the same operations as `main.m`, including mesh generation and surface area calculation.
