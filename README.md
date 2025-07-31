@@ -38,6 +38,9 @@ To execute the example scripts:
    - `sphereTest` reconstructs a hemisphere from a small sample point cloud.
    - `main` performs a reconstruction of a sample plant leaf.
 3. Output figures and data will be written to a new folder under `saves/`.
+4. The surface area of the reconstructed mesh can be computed using
+   `meshSurfaceArea` on the returned structure. Both example scripts now
+   print the area estimated from marching cubes and marching tetrahedra.
 
 ### Reading PLY files
 Custom 3D point clouds stored in ASCII PLY format can be imported using the

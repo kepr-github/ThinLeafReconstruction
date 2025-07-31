@@ -51,9 +51,13 @@ condition = OBJ.fit(rbf, polydegree, rho, regFn);
 % For gridded sample & marching cubes:
 [X, Y, Z, INTERP] = OBJ.gridSample(Ngrid, alpha);
 S_cube = isosurface(X,Y,Z,INTERP);
+area_cube = meshSurfaceArea(S_cube);
+fprintf('Surface area from marching cubes: %.5g\n', area_cube);
 
 % For tetrahedral mesh of alphaShape & marching tetra:
 S_tet = aShapeSample(OBJ, alpha, Hmax);
+area_tet = meshSurfaceArea(S_tet);
+fprintf('Surface area from marching tetrahedra: %.5g\n', area_tet);
 
 
 %% Save
