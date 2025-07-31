@@ -30,3 +30,15 @@ The main parameters of interest and their effects are:
 ## Included scripts
 - `sphereTest.m` will reconstruct one half of a sphere from 791 points, without denoising or downsampling. This should run in under a minute on a desktop computer.
 - `main.m` will reconstruct a plant leaf from a heavily downsampled point cloud with 5516 points. This should run in under 10 minutes on a desktop computer. You may like to reduce the `downsampleParam` (say, to 0.5) for a finer reconstruction.
+
+### Reading PLY files
+Custom 3D point clouds stored in ASCII PLY format can be imported using the
+`readCustomPly` function:
+
+```matlab
+[pc, extra] = readCustomPly('scan.ply');
+OBJ = surfFromPC(pc);
+```
+
+Additional vertex attributes that are not recognised by the `pointCloud`
+class are returned in the structure `extra` for further processing.
